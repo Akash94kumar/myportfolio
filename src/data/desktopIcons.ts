@@ -13,15 +13,15 @@ export const desktopIcons: DesktopIcon[] = [
 // Get next and previous sections
 export const getNextSection = (currentComponent: string): string | null => {
   const current = desktopIcons.find(icon => icon.component === currentComponent);
-  if (!current) return null;
-  const next = desktopIcons.find(icon => icon.order === current.order + 1);
+  if (!current || current.order === undefined) return null;
+  const next = desktopIcons.find(icon => icon.order === current.order! + 1);
   return next ? next.component : null;
 };
 
 export const getPreviousSection = (currentComponent: string): string | null => {
   const current = desktopIcons.find(icon => icon.component === currentComponent);
-  if (!current) return null;
-  const prev = desktopIcons.find(icon => icon.order === current.order - 1);
+  if (!current || current.order === undefined) return null;
+  const prev = desktopIcons.find(icon => icon.order === current.order! - 1);
   return prev ? prev.component : null;
 };
 

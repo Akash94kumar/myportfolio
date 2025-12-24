@@ -71,7 +71,7 @@ const GitHub: React.FC = () => {
         </motion.div>
 
         <motion.a
-          href={contact.github}
+          href="https://github.com/Akash94kumar"
           target="_blank"
           rel="noopener noreferrer"
           whileHover={{ scale: 1.05 }}

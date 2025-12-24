@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 import { useWindows } from '../context/WindowContext';
 import StartMenu from './StartMenu';
 import { desktopIcons } from '../data/desktopIcons';
@@ -8,7 +8,7 @@ import * as FaIcons from 'react-icons/fa';
 const Taskbar: React.FC = () => {
   const [isStartMenuOpen, setIsStartMenuOpen] = useState(false);
 
-  const { windows, openWindow, minimizeWindow, restoreWindow, bringToFront } = useWindows();
+  const { windows, openWindow, restoreWindow, bringToFront } = useWindows();
 
   const handleTaskbarIconClick = (iconId: string, iconName: string, component: string) => {
     const window = windows.find((w) => w.id === iconId);
