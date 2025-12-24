@@ -107,7 +107,7 @@ const Dock: React.FC = () => {
           whileTap={{ scale: 0.9 }}
           onClick={() => {
             const link = document.createElement("a");
-            link.href = "/images/Resume.docx";
+            link.href = `${import.meta.env.BASE_URL}images/Resume.docx`;
             link.download = "Resume.docx";
             document.body.appendChild(link);
             link.click();

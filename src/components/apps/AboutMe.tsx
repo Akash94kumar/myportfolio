@@ -156,7 +156,7 @@ const AboutMe: React.FC = () => {
                 }`}
                 onClick={() => {
                   const link = document.createElement("a");
-                  link.href = "/images/Resume.docx";
+                  link.href = `${import.meta.env.BASE_URL}images/Resume.docx`;
                   link.download = "Akash_Kumar_Resume.docx";
                   document.body.appendChild(link);
                   link.click();
@@ -230,7 +230,7 @@ const AboutMe: React.FC = () => {
             <div className="border-4 border-orange-500 w-48 h-56 md:w-64 md:h-72 lg:w-72 lg:h-80 overflow-hidden relative">
               {/* Image positioned to show top-left, hidden on right and bottom */}
               <img
-                src="/images/akashProfile.jpg"
+                src={`${import.meta.env.BASE_URL}images/akashProfile.jpg`}
                 alt={resumeData.name}
                 className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-300"
                 style={{
