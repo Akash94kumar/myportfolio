@@ -14,24 +14,24 @@ const AboutMe: React.FC = () => {
 
   return (
     <div
-      className={`h-full overflow-hidden ${
+      className={`h-full overflow-auto ${
         theme === "dark" ? "bg-gray-900" : "bg-gray-800"
       }`}
     >
-      <div className="flex h-full">
-        {/* Left Section - Content (2/3 width) */}
+      <div className="flex flex-col lg:flex-row h-full min-h-screen">
+        {/* Left Section - Content */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
-          className="relative w-2/3 p-8 md:p-12 lg:p-16 flex flex-col justify-between pb-4"
+          className="relative w-full lg:w-2/3 p-4 sm:p-6 md:p-8 lg:p-12 xl:p-16 flex flex-col justify-between pb-4"
         >
           {/* Top Section */}
-          <div className="flex-1 flex flex-col justify-center pl-16 pr-8">
+          <div className="flex-1 flex flex-col justify-center pl-8 sm:pl-12 md:pl-16 pr-4 sm:pr-6 md:pr-8">
             {/* Greeting */}
             <motion.p
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
-              className={`text-sm md:text-base ${
+              className={`text-xs sm:text-sm md:text-base ${
                 theme === "dark" ? "text-gray-400" : "text-gray-300"
               }`}
               style={{ marginBottom: "5px", marginTop: "-20px" }}
@@ -44,7 +44,7 @@ const AboutMe: React.FC = () => {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className={`text-2xl md:text-3xl lg:text-4xl mb-4 ${
+              className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-2 sm:mb-4 ${
                 theme === "dark" ? "text-gray-300" : "text-gray-200"
               }`}
             >
@@ -56,17 +56,17 @@ const AboutMe: React.FC = () => {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-orange-500 mb-8"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-orange-500 mb-4 sm:mb-6 md:mb-8"
             >
               {resumeData.role}
             </motion.h1>
 
-            {/* Social Icons - Left Side Center */}
+            {/* Social Icons - Responsive positioning */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="absolute top-1/3 left-4 transform -translate-y-1/2 flex flex-col gap-4 z-20"
+              className="absolute top-1/3 left-2 sm:left-4 transform -translate-y-1/2 flex flex-col gap-3 sm:gap-4 z-20"
             >
               <a
                 href="https://www.linkedin.com/in/in-akash/"
@@ -144,12 +144,12 @@ const AboutMe: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="flex items-center gap-4 mb-12"
+              className="flex items-center gap-4 mb-6 sm:mb-8 md:mb-12"
             >
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className={`px-6 py-3 border rounded-lg font-semibold transition-colors ${
+                className={`px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base border rounded-lg font-semibold transition-colors ${
                   theme === "dark"
                     ? "border-gray-600 text-gray-300 hover:bg-gray-800"
                     : "border-gray-500 text-gray-200 hover:bg-gray-700"
@@ -173,21 +173,21 @@ const AboutMe: React.FC = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="pl-16 pr-8"
+            className="pl-8 sm:pl-12 md:pl-16 pr-4 sm:pr-6 md:pr-8"
           >
             <div
-              className={`border-t pt-6 ${
+              className={`border-t pt-4 sm:pt-6 ${
                 theme === "dark" ? "border-gray-700" : "border-gray-600"
               }`}
             ></div>
-            <div className="flex items-center gap-8 md:gap-12 pt-6">
+            <div className="flex items-center gap-4 sm:gap-6 md:gap-8 lg:gap-12 pt-4 sm:pt-6">
               {stats.map((stat, index) => (
                 <div key={index} className="flex-1">
-                  <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-orange-500 mb-1">
+                  <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-orange-500 mb-1">
                     {stat.number}
                   </div>
                   <div
-                    className={`text-sm md:text-base ${
+                    className={`text-xs sm:text-sm md:text-base ${
                       theme === "dark" ? "text-gray-400" : "text-gray-300"
                     }`}
                   >
@@ -199,11 +199,11 @@ const AboutMe: React.FC = () => {
           </motion.div>
         </motion.div>
 
-        {/* Right Section - Profile Image (1/3 width) */}
+        {/* Right Section - Profile Image */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
-          className="relative w-1/3 flex items-center justify-center p-8"
+          className="relative w-full lg:w-1/3 flex items-center justify-center p-4 sm:p-6 md:p-8 lg:min-h-[400px]"
         >
           {/* Circular Background Shape */}
           <div
@@ -227,7 +227,7 @@ const AboutMe: React.FC = () => {
             className="relative z-10 w-full h-full flex items-center justify-center"
           >
             {/* Square Border Container */}
-            <div className="border-4 border-orange-500 w-48 h-56 md:w-64 md:h-72 lg:w-72 lg:h-80 overflow-hidden relative">
+            <div className="border-4 border-orange-500 w-40 h-48 sm:w-48 sm:h-56 md:w-56 md:h-64 lg:w-64 lg:h-72 xl:w-72 xl:h-80 overflow-hidden relative mx-auto">
               {/* Image positioned to show top-left, hidden on right and bottom */}
               <img
                 src={`${import.meta.env.BASE_URL}images/akashProfile.jpg`}
@@ -240,7 +240,7 @@ const AboutMe: React.FC = () => {
                   const target = e.target as HTMLImageElement;
                   target.style.display = "none";
                   if (target.parentElement) {
-                    target.parentElement.innerHTML = `<div class="w-full h-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center text-8xl text-white font-bold">${resumeData.name.charAt(
+                    target.parentElement.innerHTML = `<div class="w-full h-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center text-4xl sm:text-6xl md:text-8xl text-white font-bold">${resumeData.name.charAt(
                       0
                     )}</div>`;
                   }
